@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="mx.hiaxis.neutrino.pos.controller.util.CheckoutDelegate" />
+    <bean id="saleLogic" class="mx.hiaxis.neutrino.pos.logic.SaleLogic"/>
+
+    <bean id="newSaleState"         class="mx.hiaxis.neutrino.pos.state.NewSaleState"         />
+    <bean id="createPriceState"     class="mx.hiaxis.neutrino.pos.state.CreatePriceState"     />
+    <bean id="selectPayMethodState" class="mx.hiaxis.neutrino.pos.state.SelectPayMethodState" />
+    <bean id="selectAmountState"    class="mx.hiaxis.neutrino.pos.state.SelectAmountState"    />
+    <bean id="selectPriceState"     class="mx.hiaxis.neutrino.pos.state.SelectPriceState"     />
+    <bean id="selectSkuState"       class="mx.hiaxis.neutrino.pos.state.SelectSkuState"       />
+    
+    <bean class="mx.hiaxis.neutrino.pos.state.config.StateConfiguration">
+        <property name="initialState"        ref="newSaleState"         />
+        <property name="newSaleState"        ref="newSaleState"         />
+        <property name="createPriceState"    ref="createPriceState"     />
+        <property name="selectPayMethodSate" ref="selectPayMethodState" />
+        <property name="selectAmountState"   ref="selectAmountState"    />
+        <property name="selectPriceState"    ref="selectPriceState"     />
+        <property name="selectSkuState"      ref="selectSkuState"       />
+    </bean>
+    
+    
+    
+</beans>

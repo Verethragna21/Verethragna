@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="TOP_CENTER" fillWidth="false" maxHeight="1.7976931348623157E308" spacing="4.0">
+         <children>
+            <GridPane hgap="4.0" vgap="4.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label styleClass="static-text-field-label" text="Precio" GridPane.rowIndex="3" />
+                  <Label styleClass="static-text-field-label" text="Para el producto" />
+                  <Label fx:id="productName" text="&lt;Nombre del producto&gt;" GridPane.columnIndex="1" />
+                  <Separator maxWidth="1.7976931348623157E308" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
+                  <Label styleClass="static-text-field-label" text="Con SKU" GridPane.rowIndex="1" />
+                  <Label styleClass="static-text-field-label" text="Moneda" GridPane.rowIndex="4" />
+                  <Label styleClass="static-text-field-label" text="Impuesto" GridPane.rowIndex="5" />
+                  <Label styleClass="static-text-field-label" text="Fecha inicial" GridPane.rowIndex="6" />
+                  <Label styleClass="static-text-field-label" text="Fecha final" GridPane.rowIndex="7" />
+                  <TextField fx:id="price" promptText="valor del producto" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="currency" maxWidth="1.7976931348623157E308" promptText="---" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="tax" maxWidth="1.7976931348623157E308" promptText="---" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <DatePicker fx:id="beginDate" promptText="--/--/----" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <DatePicker fx:id="endDate" promptText="--/--/----" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label fx:id="productSku" text="&lt;Sku del producto&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" />
+                  <ColumnConstraints hgrow="NEVER" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints vgrow="NEVER" />
+                  <RowConstraints />
+                  <RowConstraints vgrow="NEVER" />
+                  <RowConstraints vgrow="NEVER" />
+                  <RowConstraints vgrow="NEVER" />
+                  <RowConstraints vgrow="NEVER" />
+                  <RowConstraints vgrow="NEVER" />
+                  <RowConstraints vgrow="NEVER" />
+               </rowConstraints>
+               <padding>
+                  <Insets bottom="28.0" />
+               </padding>
+            </GridPane>
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#onAdd" text="Agregar" />
+            <Hyperlink onAction="#onGoBack" text="cancelar y volver" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </VBox>
+   </children>
+</HBox>

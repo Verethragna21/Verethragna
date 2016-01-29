@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:id="container" alignment="CENTER" fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane fx:id="stackedContainer" prefHeight="200.0" prefWidth="260.0">
+         <children>
+            <VBox fx:id="innerContainer" alignment="CENTER" focusTraversable="true" styleClass="initial-login-styles" stylesheets="@../css/neutrino.css">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" styleClass="login-header-label" text="Inicio de sesión" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="40.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="userName" focusTraversable="false" minWidth="200.0" promptText="Usuario">
+                     <VBox.margin>
+                        <Insets left="12.0" right="12.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label fx:id="outputMessage" styleClass="login-output-message" text="&lt;mensaje de salida&gt;">
+                     <VBox.margin>
+                        <Insets bottom="35.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button defaultButton="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loginHandler" text="Siguiente">
+                     <VBox.margin>
+                        <Insets bottom="24.0" left="12.0" right="12.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</HBox>

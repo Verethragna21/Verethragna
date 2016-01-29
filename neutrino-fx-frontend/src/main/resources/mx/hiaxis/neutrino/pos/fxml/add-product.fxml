@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" prefHeight="399.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+      <ColumnConstraints hgrow="NEVER" maxWidth="95.0" minWidth="9.0" prefWidth="9.0" />
+    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="191.0" minWidth="10.0" prefWidth="90.0" />
+    <ColumnConstraints hgrow="NEVER" maxWidth="229.0" minWidth="150.0" prefWidth="168.0" />
+      <ColumnConstraints hgrow="NEVER" maxWidth="120.0" minWidth="0.0" prefWidth="49.0" />
+      <ColumnConstraints hgrow="NEVER" maxWidth="190.0" minWidth="10.0" prefWidth="18.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="214.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="9.0" prefWidth="17.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints vgrow="NEVER" />
+    <RowConstraints maxHeight="23.0" minHeight="9.0" prefHeight="23.0" vgrow="NEVER" />
+    <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="26.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="33.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="250.0" minHeight="215.0" prefHeight="225.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="16.0" minHeight="11.0" prefHeight="16.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="31.0" vgrow="NEVER" />
+  </rowConstraints>
+   <children>
+      <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+      <Label text="SKU:" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets right="4.0" />
+         </GridPane.margin></Label>
+      <Label text="Nombre:" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets right="4.0" />
+         </GridPane.margin></Label>
+      <Label alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Descripción:" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+         <GridPane.margin>
+            <Insets bottom="4.0" right="4.0" top="4.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField fx:id="skuId" promptText="Código del producto" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextField fx:id="skuDisambiguation" maxWidth="33.0" prefHeight="25.0" prefWidth="33.0" promptText="a" text="a" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="4.0" right="12.0" />
+         </GridPane.margin>
+         <tooltip>
+            <Tooltip text="Código de desambiguacion:&#10;este valor se utiliza para diferenciar &#10;artículos con el mismo SKU, esto sucede &#10;cuando erroneamente se asigna el mismo &#10;SKU a dos productos diferentes o similares." wrapText="true" />
+         </tooltip>
+      </TextField>
+      <TextField fx:id="productName" promptText="Un nombre corto" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <TextArea fx:id="productDescription" maxHeight="250.0" maxWidth="600.0" promptText="Una descripcion detallada del producto" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets bottom="4.0" right="12.0" top="4.0" />
+         </GridPane.margin>
+      </TextArea>
+      <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="5">
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </Separator>
+      <Button defaultButton="true" mnemonicParsing="false" onAction="#saveProductHandler" text="Agregar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <Button alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#returnBack" text="Regresar" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+      <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.rowSpan="3" />
+      <ImageView fx:id="previewPicture" fitHeight="209.0" fitWidth="209.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#onSelectPicture" text="Asignar Imagen" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+   </children>
+   <padding>
+      <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+   </padding>
+</GridPane>

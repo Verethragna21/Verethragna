@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutX="14.0" layoutY="14.0" prefHeight="371.0" prefWidth="572.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="128.0" minHeight="7.0" prefHeight="8.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="139.0" minHeight="5.0" prefHeight="35.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="255.0" minHeight="10.0" prefHeight="255.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ToolBar focusTraversable="false" prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+              <items>
+                  <TextField fx:id="findProduct" promptText="Nombre del producto" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="9.0" />
+                <Button defaultButton="true" mnemonicParsing="false" onAction="#launchSearchingOfProduct" text="Buscar" />
+              </items>
+               <effect>
+                  <Blend />
+               </effect>
+            </ToolBar>
+            <TableView fx:id="tableView" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnSpan="2" GridPane.rowIndex="2">
+              <columns>
+                <TableColumn fx:id="productSku" prefWidth="75.0" text="SKU" />
+                  <TableColumn fx:id="productName" prefWidth="75.0" text="NOMBRE" />
+                  <TableColumn fx:id="productDescription" prefWidth="75.0" text="DESCRIPCION" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Separator prefWidth="200.0" GridPane.columnSpan="2" />
+            <Button mnemonicParsing="false" onAction="#goAddNewProduct" text="Agregar Producto" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+   </children>
+</Pane>

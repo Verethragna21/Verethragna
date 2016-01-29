@@ -1,0 +1,7 @@
+/bin/
+/target/
+/images/
+/.settings/
+/.classpath
+/.project
+/neutrino-fx-frontend.iml

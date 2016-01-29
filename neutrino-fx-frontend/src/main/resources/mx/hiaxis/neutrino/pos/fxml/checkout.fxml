@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" spacing="4.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefWidth="200.0" VBox.vgrow="NEVER">
+         <children>
+            <ToolBar HBox.hgrow="ALWAYS">
+              <items>
+                <Button mnemonicParsing="false" onAction="#onBackAction" text="Regresar" />
+              </items>
+            </ToolBar>
+            <ToolBar HBox.hgrow="NEVER">
+               <items>
+                <Button disable="true" mnemonicParsing="false" text="Opciones" />
+               </items>
+            </ToolBar>
+         </children>
+      </HBox>
+      <GridPane VBox.vgrow="ALWAYS">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="NEVER" minWidth="132.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints maxHeight="1.7976931348623157E308" vgrow="NEVER" />
+          <RowConstraints valignment="TOP" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <HBox fx:id="mainDisplayBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+               <children>
+                  <ListView fx:id="mainList" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnSpan="2147483647" HBox.hgrow="ALWAYS">
+                     <GridPane.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" />
+                     </GridPane.margin>
+                  </ListView>
+               </children>
+            </HBox>
+            <TextField id="checkout-main-input-field" fx:id="mainInput" maxWidth="1.7976931348623157E308" onKeyReleased="#onInput" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <Button fx:id="mainButton" contentDisplay="TOP" defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onMainAction" styleClass="hugesize-text" text="Pagar" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="2147483647">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <graphic>
+                  <ImageView fx:id="mainButtonImageView" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/Payment64.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <HBox alignment="TOP_RIGHT" styleClass="framed-pane" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+               <children>
+                  <GridPane HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="1.7976931348623157E308" />
+                        <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="1.7976931348623157E308" />
+                        <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="1.7976931348623157E308" />
+                        <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="1.7976931348623157E308" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+                        <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="1.7976931348623157E308" />
+                      <ColumnConstraints halignment="LEFT" hgrow="NEVER" />
+                      <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="120.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                      <RowConstraints vgrow="NEVER" />
+                      <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                    </rowConstraints>
+                     <children>
+                        <Button disable="true" mnemonicParsing="false" text="No se ha seleccionado cliente" GridPane.columnSpan="3" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets bottom="4.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2147483647" GridPane.rowSpan="4" GridPane.valignment="BOTTOM">
+                           <image>
+                              <Image url="@../media/Account48.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="hugesize-text" text="Total:" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                        <Label fx:id="currentTotal" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" styleClass="hugesize-text" text="\$ 0.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="midsize-text" text="Subtotal:" GridPane.columnIndex="6" />
+                        <Label fx:id="currentTotal1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" styleClass="midsize-text" text="\$ 0.0" GridPane.columnIndex="7" />
+                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" styleClass="midsize-text" text="Impuestos:" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <Label fx:id="currentTotal11" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" styleClass="midsize-text" text="\$ 0.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <Separator GridPane.columnIndex="6" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" styleClass="midsize-text" text="Pago:" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="midsize-text" text="Cambio:" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                        <Label fx:id="currentTotal2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" styleClass="midsize-text" text="\$ 0.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                        <Label fx:id="currentTotal3" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" styleClass="midsize-text" text="\$ 0.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                        <Separator orientation="VERTICAL" GridPane.columnIndex="5" GridPane.rowSpan="2147483647" />
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Seleccionar" GridPane.columnSpan="2" GridPane.hgrow="NEVER" GridPane.rowIndex="5" />
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Crear" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets left="4.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Separator orientation="VERTICAL" GridPane.columnIndex="3" GridPane.rowSpan="2147483647" />
+                        <MenuButton fx:id="selectedPayMethod" disable="true" mnemonicParsing="false" text="Modo de pago" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                            <MenuItem mnemonicParsing="false" text="Action 2" />
+                          </items>
+                        </MenuButton>
+                     </children>
+                  </GridPane>
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" />
+               </GridPane.margin>
+            </HBox>
+            <Label fx:id="messageOutput" alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="midsize-text" text="Escriba el código de un producto para agregarlo a la venta" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/Info20.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</VBox>

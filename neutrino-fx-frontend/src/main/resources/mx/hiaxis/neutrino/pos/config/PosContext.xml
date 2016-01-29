@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+	<import resource="SaleContext.xml" />
+
+	<bean class="com.hiaxis.commons.spring.util.SpringFxApplication" name="fxApplication" />
+	<bean class="mx.hiaxis.neutrino.pos.provider.NeutrinoCurrentUserProvider" />
+	<bean class="mx.hiaxis.neutrino.pos.util.UploadPictures" />
+
+
+	<context:component-scan
+		base-package="com.hiaxis.neutrino.security,
+                                          mx.hiaxis.neutrino.dao.rest,
+                                          mx.hiaxis.neutrino.pos.provider,
+                                          mx.hiaxis.neutrino.pos.controller" />
+
+	<bean id="requestConfigBuilder" class="org.apache.http.client.config.RequestConfig" factory-method="custom">
+		<property name="socketTimeout" value="15000" />
+		<property name="connectTimeout" value="15000" />
+	</bean>
+
+	<bean id="requestConfig" factory-bean="requestConfigBuilder"
+		factory-method="build" />
+
+	<bean id="httpClientBuilder" class="org.apache.http.impl.client.HttpClientBuilder" factory-method="create">
+		<property name="defaultRequestConfig" ref="requestConfig" />
+	</bean>
+
+	<bean id="httpClient" factory-bean="httpClientBuilder" factory-method="build" />
+
+	<bean class="mx.hiaxis.neutrino.batavia.rest.RestRepository">
+		<property name="configuration">
+			<bean class="mx.hiaxis.neutrino.batavia.rest.RestRepositoryConfiguration">
+				<property name="baseUrl" value="http://localhost:8080/tevatron" />
+				<property name="entityUrlRelation">
+					<map>
+						<entry key="mx.hiaxis.neutrino.entity.Credential" value="credential" />
+					</map>
+				</property>
+			</bean>
+		</property>
+		<property name="responseConverter">
+			<bean class="mx.hiaxis.neutrino.batavia.json.JsonResponseConverter" >
+				<property name="ignoreAccessibility" value="true" />
+				<property name="relationSuffix" value="_id" />
+			</bean>
+		</property>
+		<property name="client" ref="httpClient" />
+	</bean>
+
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="mx.hiaxis.neutrino.dao.rest.support.RestConfiguration">
+		<!-- <property name="baseUrl" value="https://inelahjer.com/neutrino" /> -->
+		<property name="baseUrl"
+			value="http://localhost:8080/neutrino-rest-services/" />
+	</bean>
+
+</beans>

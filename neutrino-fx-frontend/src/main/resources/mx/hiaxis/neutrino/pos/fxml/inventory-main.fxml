@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="8.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox>
+         <children>
+            <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#goBack" text="Regresar" />
+               </items>
+            </ToolBar>
+            <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="NEVER">
+               <items>
+                  <Label contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="view-title" text="Inventarios Recientes" />
+               </items>
+            </ToolBar>
+         </children>
+      </HBox>
+      <VBox maxWidth="1.7976931348623157E308" spacing="8.0">
+         <children>
+            <ListView fx:id="recentInventory" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+            <HBox alignment="TOP_RIGHT" maxWidth="1.7976931348623157E308">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#reviewInventory" prefHeight="42.0" prefWidth="92.0" text="Revision" />
+                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#createNewInventory" text="Crear _Nuevo">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../media/Add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="369.0" prefWidth="497.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="BASELINE_CENTER" VBox.vgrow="NEVER">
+         <children>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <ImageView fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/mx/hiaxis/neutrino/pos/media/Neutrino.png" />
+                     </image>
+                  </ImageView>
+                  <Label styleClass="bigsize-text" text="Neutrino Pos - v0.1 beta" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <GridPane alignment="TOP_CENTER" VBox.vgrow="NEVER">
+        <columnConstraints>
+          <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="NEVER" />
+          <ColumnConstraints hgrow="NEVER" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints vgrow="NEVER" />
+          <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+          <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <Label styleClass="static-text-field-label" text="Licencia">
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="12.0" top="4.0" />
+               </GridPane.margin></Label>
+            <Label styleClass="static-text-field-label" text="Propietario" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="12.0" top="4.0" />
+               </GridPane.margin></Label>
+            <Label styleClass="static-text-field-label" text="Usuario actual" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="12.0" top="4.0" />
+               </GridPane.margin></Label>
+            <Label styleClass="static-text-field-label" text="Gerente" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="12.0" top="4.0" />
+               </GridPane.margin></Label>
+            <Label styleClass="static-text-field-label" text="Productos registrados" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="12.0" top="4.0" />
+               </GridPane.margin></Label>
+            <Label styleClass="static-text-field-label" text="Duración" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="12.0" top="4.0" />
+               </GridPane.margin></Label>
+            <Label styleClass="static-text-field-label" text="Fecha de instalación" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="12.0" top="4.0" />
+               </GridPane.margin></Label>
+            <Label fx:id="license" text="&lt;tipo de licencia&gt;" GridPane.columnIndex="1" />
+            <Label fx:id="duration" text="&lt;periodo de duración&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="owner" text="&lt;nombre del propietario&gt;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="installationDate" text="&lt;instalación del cliente únicamente&gt;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="userName" text="&lt;usuario actualmente logueado&gt;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="managerName" text="&lt;Nombre del supervisor del usuario&gt;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="productsCount" text="&lt;Productos en la base de datos&gt;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <Hyperlink onAction="#onHelpAction" text="Ayuda en linea" />
+   </children>
+</VBox>

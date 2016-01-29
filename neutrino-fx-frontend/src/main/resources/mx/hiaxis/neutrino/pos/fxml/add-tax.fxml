@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="360.0" prefWidth="346.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+      <ColumnConstraints hgrow="NEVER" maxWidth="95.0" minWidth="9.0" prefWidth="9.0" />
+    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="191.0" minWidth="10.0" prefWidth="191.0" />
+    <ColumnConstraints hgrow="NEVER" />
+      <ColumnConstraints hgrow="NEVER" maxWidth="85.0" minWidth="35.0" prefWidth="77.0" />
+      <ColumnConstraints hgrow="NEVER" maxWidth="66.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints vgrow="NEVER" />
+    <RowConstraints vgrow="NEVER" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="250.0" minHeight="47.0" prefHeight="47.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="192.0" minHeight="17.0" prefHeight="90.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="120.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="14.0" minHeight="6.0" prefHeight="8.0" vgrow="ALWAYS" />
+  </rowConstraints>
+   <children>
+      <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+      <Label prefHeight="35.0" prefWidth="215.0" text="Impuestos" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" />
+      <Label text="Nombre:" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets right="4.0" />
+         </GridPane.margin></Label>
+      <Label text="Código:" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets right="4.0" />
+         </GridPane.margin></Label>
+      <Label alignment="TOP_RIGHT" text="Valor:" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets right="4.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField fx:id="name" promptText="Nombre" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextField fx:id="code" promptText="Código" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Separator prefHeight="11.0" prefWidth="383.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" />
+      <Button defaultButton="true" mnemonicParsing="false" onAction="#btnSaveTaxesHandler" text="Agregar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <Button alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#BtnExitHandler" text="Salir" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+      <TextField fx:id="valor" layoutX="184.0" layoutY="83.0" prefHeight="12.0" prefWidth="120.0" promptText="0.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+   </children>
+   <padding>
+      <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+   </padding>
+</GridPane>

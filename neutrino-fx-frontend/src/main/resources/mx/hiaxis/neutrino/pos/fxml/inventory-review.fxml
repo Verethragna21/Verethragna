@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="8.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox>
+         <children>
+            <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#goBack" text="Regresar" />
+               </items>
+            </ToolBar>
+            <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="NEVER">
+               <items>
+                  <Label contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="view-title" text="Detalles de Inventario" />
+               </items>
+            </ToolBar>
+         </children>
+      </HBox>
+      <VBox maxWidth="1.7976931348623157E308" spacing="8.0">
+         <children>
+            <GridPane hgap="12.0" vgap="4.0" VBox.vgrow="NEVER">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="ALWAYS" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label styleClass="static-text-field-label" text="Autor :" />
+                  <Label fx:id="author" text="&lt;autor&gt;" GridPane.columnIndex="1" />
+                  <Label text="Status :" GridPane.rowIndex="1" />
+                  <Label fx:id="status" text="&lt;status&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label styleClass="static-text-field-label" text="Razon :" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="32.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="reason" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label styleClass="static-text-field-label" text="Fecha de inicio :" GridPane.columnIndex="2">
+                     <padding>
+                        <Insets left="32.0" />
+                     </padding>
+                  </Label>
+                  <DatePicker fx:id="startDate" GridPane.columnIndex="3" />
+                  <Label styleClass="static-text-field-label" text="Fecha operativa :" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <DatePicker fx:id="operativeDate" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label text="Fecha de cierre :" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <DatePicker fx:id="realDate" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <ListView fx:id="productList" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+            <HBox alignment="TOP_RIGHT" maxWidth="1.7976931348623157E308" spacing="8.0">
+               <children>
+                  <Button alignment="CENTER_RIGHT">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../media/Confirm.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER_RIGHT">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../media/Add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>
